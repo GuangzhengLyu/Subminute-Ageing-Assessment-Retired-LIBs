@@ -200,7 +200,6 @@ DataProcess_2_OneCycle_3.m
 Additional preprocessing adjustments are implemented to handle:
 
 - Data alignment  
-- Missing fields  
 - Sample-based organization  
 
 ---
