@@ -1,7 +1,7 @@
 # 1-Proposed
 ## Subminute Cross-Dimensional Ageing Assessment (Core Implementation)
 
-This folder contains the full implementation of the proposed ageing assessment framework described in the main manuscript (Fig. 1 to 5). It includes deep-ageing observation, pulse-inspection relaxation voltage analysis, internal-state feature extraction, multi-task PLSR modelling, and visualization of assessment results.
+This folder contains the full implementation of the proposed ageing assessment framework described in the main manuscript (**Fig. 1 to Fig. 5**). It includes deep-ageing observation, pulse-inspection relaxation voltage analysis, internal-state feature extraction, multi-task PLSR modelling, and visualization of assessment results.
 
 ---
 
@@ -45,7 +45,7 @@ SCU3_1_ageingView.m
 
 - Visualizes ageing trajectories  
 - Displays capacity and RUL distributions  
-- Corresponds to Fig. 1  
+- Corresponds to **Fig. 1**  
 
 Input:
 
@@ -70,7 +70,7 @@ This module visualizes the expanded performance indicators:
 - Mid-point voltage  
 - Platform discharge capacity  
 
-Corresponds to Fig. 2.
+Corresponds to **Fig. 2**.
 
 Input:
 
@@ -100,7 +100,7 @@ Computes and visualizes SOH derived from:
 - Mid-point voltage  
 - Platform capacity  
 
-Corresponds to Fig. 2 (m).
+Corresponds to **Fig. 2 (m)**.
 
 ---
 
@@ -118,7 +118,7 @@ This module visualizes:
 - Extracted internal-state parameters  
 - Feature distributions at specific sampling terminal voltages  
 
-Corresponds to Fig. 3 and Fig. 4.
+Corresponds to **Fig. 3 and Fig. 4**.
 
 ---
 
@@ -166,7 +166,7 @@ SCU3_6_resultView_3.m
   - Prediction vs ground truth  
   - Error distributions  
   - Statistical summaries  
-- Corresponds to Fig. 5  
+- Corresponds to **Fig. 5**  
 
 Input:
 
