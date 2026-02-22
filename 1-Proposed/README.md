@@ -100,13 +100,7 @@ Computes and visualizes SOH derived from:
 - Mid-point voltage  
 - Platform capacity  
 
-Corresponds to Fig. 2.
-
-Input:
-
-```
-OneCycle_x.mat
-```
+Corresponds to Fig. 2 (m).
 
 ---
 
@@ -125,12 +119,6 @@ This module visualizes:
 - Feature distributions at specific sampling terminal voltages  
 
 Corresponds to Fig. 3 and Fig. 4.
-
-Input:
-
-```
-Feature_x_ALL.mat
-```
 
 ---
 
@@ -153,6 +141,7 @@ SCU3_5_MutiTask_PLSR_3.m
 Input:
 
 ```
+OneCycle_x.mat
 Feature_x_ALL.mat
 ```
 
