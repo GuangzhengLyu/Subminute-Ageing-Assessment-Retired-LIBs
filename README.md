@@ -2,7 +2,7 @@
 
 This repository accompanies the manuscript:
 
-“Subminute diagnostics reveal hidden heterogeneity of deep ageing patterns beyond capacity for second-life lithium-ion batteries”  
+**“Subminute diagnostics reveal hidden heterogeneity of deep ageing patterns beyond capacity for second-life lithium-ion batteries”**  
 
 and its Supplementary Information.
 
@@ -342,21 +342,21 @@ Used by:
 ## 5. Figure-to-Code Mapping
 
 ```
-Fig. 1–5               → 1-Proposed
-Sup. Fig. 8–9          → 2-RV and PIRV
-Sup. Fig. 10–11        → 3-RC Models
-Sup. Fig. 12           → 4-Feature Importance
-Sup. Fig. 13           → 5-Number of Components
-Sup. Fig. 14–16        → 6-Group-K-means
-Sup. Fig. 17–22        → 7-Multiple-Estimators
-Sup. Fig. 23–32        → 8-Open-Source Datasets
+1-Proposed                Fig. 1-5                
+2-RV and PIRV             Sup. Fig. 8-9           
+3-RC Models               Sup. Fig. 10-11         
+4-Feature Importance      Sup. Fig. 12            
+5-Number of Components    Sup. Fig. 13            
+6-Group-K-means           Sup. Fig. 14-16         
+7-Multiple-Estimators     Sup. Fig. 17-22     Sup. Table 1-6      
+8-Open-Source Datasets    Sup. Fig. 23–32         
 ```
 
 ---
 
 ## 6. Data Availability
 
-Three-year ageing dataset covering:
+Three-year ageing datasets of retired lithium-ion batteries under consecutive retirement scenarios are reported, covering:
 
 - 590 samples  
 - 119,691 distinct cycles  
@@ -366,14 +366,14 @@ Three-year ageing dataset covering:
 Raw data and code deposited in Zenodo:
 
 ```
-https://zenodo.org/records/18633811
-https://zenodo.org/records/17904751
-https://zenodo.org/records/17912803
-https://zenodo.org/records/17912818
-https://zenodo.org/records/17912831
-https://zenodo.org/records/17913097
-https://zenodo.org/records/17913616
-https://zenodo.org/records/17913646
+Dataset Part 1: https://zenodo.org/records/18633811
+Dataset Part 2: https://zenodo.org/records/17904751
+Dataset Part 3: https://zenodo.org/records/17912803
+Dataset Part 4: https://zenodo.org/records/17912818
+Dataset Part 5: https://zenodo.org/records/17912831
+Dataset Part 6: https://zenodo.org/records/17913097
+Dataset Part 7: https://zenodo.org/records/17913616
+Dataset Part 8: https://zenodo.org/records/17913646
 ```
 
 Processed datasets and feature files required to reproduce all figures are included in this repository.
