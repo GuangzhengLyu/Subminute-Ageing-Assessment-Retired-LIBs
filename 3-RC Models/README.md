@@ -9,7 +9,7 @@ This folder implements the comparative study of RC equivalent-circuit model orde
 
 can be attributed to RC order only.
 
-This module corresponds to Supplementary Fig. 10 and Supplementary Fig. 11.
+This module corresponds to **Supplementary Fig. 10 and Supplementary Fig. 11**.
 
 ---
 
@@ -217,7 +217,7 @@ For each `{k}RC/` folder and each dataset:
 3. SCU3_6_resultView_{x}
 ```
 
-Repeat for `{k} = 1 to 5`, then aggregate results to reproduce the RC-order comparison in Supplementary Fig. 10 to Supplementary Fig. 11.
+Repeat for `{k} = 1 to 5`, then aggregate results to reproduce the RC-order comparison in **Supplementary Fig. 10 and Supplementary Fig. 11**.
 
 ---
 
