@@ -230,14 +230,14 @@ Folder:
 ---
 
 ## Recommended Execution Order (Per Dataset)
-
+```
 1. `1-Data/`                            → generate `OneCycle_<DATASET>.mat`  
 2. `<DATASET>_4_featureView.m`          → generate `Feature_ALL_<DATASET>.mat`  
 3. `<DATASET>_5_MutiTask_PLSR.m`        → generate `PLSR_Result_*`  
 4. `<DATASET>_6_resultView.m`           → generate evaluation plots  
 5. `<DATASET>_7_K_Means.m`              → generate sorting consistency results  
 6. `2-Multiple-Estimators/`             → benchmark 14 estimators  
-
+```
 ---
 
 ## Comparison Principle
