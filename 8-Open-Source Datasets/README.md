@@ -185,7 +185,7 @@ PLSR_Result_*
 
 Output:
 
-- Figures for Supplementary Fig. 23 to Supplementary Fig. 32 (dataset-dependent)
+- Figures for **Supplementary Fig. 23 to Supplementary Fig. 32** (dataset-dependent)
 
 ---
 
