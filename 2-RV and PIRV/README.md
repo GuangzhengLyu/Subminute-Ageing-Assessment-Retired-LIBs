@@ -52,7 +52,7 @@ In contrast to PIRV (30 s relaxation inserted during charging):
 
 - RV is measured only once  
 - Measured after full CC-CV charging  
-- Requires long rest duration  
+- Requires long CV charging duration  
 - Cannot sample multiple voltage levels  
 - Has lower excitation richness  
 
@@ -107,7 +107,7 @@ SCU3_4_TimeMeasure_2.m
 SCU3_4_TimeMeasure_3.m
 ```
 
-- Computes full measurement duration required for FCRV  
+- Computes full measurement duration required for RV  
 - Compares with PIRV measurement time  
 - Quantifies time reduction ratio  
 - Supports Supplementary Fig. 9  
@@ -122,7 +122,7 @@ SCU3_5_MutiTask_PLSR_2.m
 SCU3_5_MutiTask_PLSR_3.m
 ```
 
-- Uses FCRV-based features  
+- Uses RV-based features  
 - Implements identical PLSR structure as 1-Proposed  
 - Performs leave-one-out cross-validation  
 - Saves predicted and true values  
@@ -174,7 +174,7 @@ Supplementary Fig. 8 to Fig. 9
 
 The `Result/` directory stores:
 
-- FCRV-based assessment outputs  
+- RV-based assessment outputs  
 - Predicted vs true values  
 
 Existing files may be overwritten when rerunning scripts.
