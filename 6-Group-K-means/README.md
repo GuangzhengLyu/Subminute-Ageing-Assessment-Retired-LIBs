@@ -75,7 +75,6 @@ For groups not included, the script explicitly fills them with zeros to keep the
 
 ## Group-Weighted K-means Configuration
 
-- Number of clusters: K = 25
 - Group weights: w = [1, 1, 1, 1]
 - Initialization: K-means++
 - Optimizer: Lloyd iterations
@@ -88,13 +87,12 @@ The clustering is executed in the full concatenated feature space; PCA is only u
 
 ---
 
-## Sorting Consistency Metric
+## Sorting Accuracy Metric
 
 After clustering, each cluster is evaluated by computing the standard deviation across samples at each ageing-cycle index for multiple trajectories stored in `OneCycle(i).Cycle`:
 
 - DiscCapaAh (discharge capacity trajectory)
 - DiscEnergyWh (discharge energy trajectory)
-- ConstCharCapaAh (CC charge-capacity trajectory)
 - CharTimeS (charge time trajectory; filtered by isfinite)
 - PlatfCapaAh (platform discharge capacity trajectory)
 
@@ -105,16 +103,16 @@ For each cluster:
 1. Align trajectories by using the shortest available length within that cluster.
 2. For each cycle index m, compute std across cells in the cluster.
 3. Average std(m) across m to get one dispersion value per cluster.
-4. Average across all clusters to get one dispersion score per Kind.
+4. Average across all clusters to get one dispersion score per Label.
 
-Finally, each dispersion score is normalized by the Kind-1 baseline:
+Finally, each dispersion score is normalized by the Label-1 baseline:
 
 `Result(i,:) = M_STD_*Sum ./ M_STD_*Sum(1);`
 
 So:
 
 - Result(:,1) = 1 (baseline sorting using SOH only)
-- Values < 1 indicate improved sorting consistency relative to capacity-only sorting.
+- Values < 1 indicate improved sorting accuracy relative to capacity-only sorting.
 
 The scripts visualize Result using bar plots for each trajectory metric.
 
@@ -130,7 +128,6 @@ Running SCU_K_Means_x.m produces:
 - Bar plots of normalized dispersion scores (Result) for:
   - discharge capacity
   - discharge energy
-  - CC charge capacity
   - charge time
   - platform discharge capacity
 
@@ -153,7 +150,7 @@ Ensure the 1-Proposed PLSR result files exist in the specified paths before runn
 This module evaluates whether richer ageing assessment outputs improve engineering sorting:
 
 - Capacity-only sorting can group cells with similar SOH but different internal degradation paths.
-- Adding RUL, internal-state features, and expanded-indicator SOHs is expected to reduce within-group trajectory dispersion, indicating improved sorting consistency for cascade utilization.
+- Adding RUL, internal-state features, and expanded-indicator SOHs is expected to reduce within-group trajectory dispersion, indicating improved sorting accuracy for cascade utilization.
 
 ---
 
