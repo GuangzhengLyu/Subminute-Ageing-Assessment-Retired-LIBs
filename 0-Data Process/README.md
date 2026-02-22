@@ -89,7 +89,6 @@ DataProcess_1_Battery_*.m
 
 Purpose:
 
-- Read raw measurement files  
 - Organize time-series signals (time, current, voltage, etc.)  
 - Group data by battery and by cycle  
 - Generate structured `.mat` battery files  
