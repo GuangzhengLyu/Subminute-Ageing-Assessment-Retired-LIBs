@@ -3,7 +3,7 @@
 
 This folder performs feature importance analysis using SHAP (Shapley values) to quantify how the six internal-state features contribute to the prediction of selected ageing targets. The implementation follows the MathWorks `shapley` workflow: create an explainer using a background set, compute local SHAP for a query point, and compute global importance as mean absolute SHAP over multiple query points.
 
-This module corresponds to Supplementary Fig. 12.
+This module corresponds to **Supplementary Fig. 12**.
 
 ---
 
