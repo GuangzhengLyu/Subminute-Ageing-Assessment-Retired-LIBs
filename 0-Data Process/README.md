@@ -206,11 +206,12 @@ Additional preprocessing adjustments are implemented to handle:
 
 ## Recommended Execution Order (Per Dataset)
 
-1. Place raw data into `1-Raw Data`  
-2. Run `DataProcess_1_*`  
-3. Verify generated files in `4-Battery`  
-4. Run `DataProcess_2_OneCycle_*`  
-5. Confirm `OneCycle_*.mat` is generated  
+1. Place raw data into `1-Raw Data`
+2. Use MATLAB to extract `Cycle` data and `Record` data from raw files
+3. Run `DataProcess_1_*`  
+4. Verify generated files in `4-Battery`  
+5. Run `DataProcess_2_OneCycle_*`  
+6. Confirm `OneCycle_*.mat` is generated  
 
 ---
 
