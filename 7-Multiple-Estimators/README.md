@@ -3,7 +3,7 @@
 
 This folder benchmarks 14 data-driven estimators under an identical ageing-assessment setting. Each estimator is used to solve the same six ageing tasks using the same six internal-state features extracted from relaxation-voltage modeling. The goal is to compare assessment accuracy and assessment time across estimators under a controlled protocol.
 
-This module corresponds to Supplementary Fig. 17 to Supplementary Fig. 22 and Supplementary Table 1 to Supplementary Table 6.
+This module corresponds to **Supplementary Fig. 17 to Supplementary Fig. 22** and **Supplementary Table 1 to Supplementary Table 6**.
 
 ---
 
@@ -153,7 +153,7 @@ For each estimator subfolder:
    SCU3_6_resultView_3.m
    ```
 
-3. Compare summary metrics across all 14 estimators to reproduce Supplementary Fig. 17 to Supplementary Fig. 22 and Supplementary Table 1 to Supplementary Table 6.
+3. Compare summary metrics across all 14 estimators to reproduce **Supplementary Fig. 17 to Supplementary Fig. 22** and **Supplementary Table 1 to Supplementary Table 6**.
 
 ---
 
