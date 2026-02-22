@@ -3,7 +3,7 @@
 
 This folder evaluates the sorting accuracy of retired batteries based on ageing assessment outputs. Batteries are grouped using a group-weighted K-means algorithm, and the sorting quality is quantified by the within-group dispersion of ageing trajectories (lower dispersion indicates higher sorting accuracy).
 
-The analysis compares sorting performance under different ageing-assessment task combinations (capacity-only vs adding RUL, internal-state features, and expanded-indicator SOHs). This module corresponds to Supplementary Fig. 14 to Supplementary Fig. 16.
+The analysis compares sorting performance under different ageing-assessment task combinations (capacity-only vs adding RUL, internal-state features, and expanded-indicator SOHs). This module corresponds to **Supplementary Fig. 14 to Supplementary Fig. 16**.
 
 ---
 
