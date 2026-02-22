@@ -46,11 +46,7 @@ This repository implements the full experimental and computational pipeline for:
 - Sorting-accuracy validation  
 - Cross-chemistry external validation on 10 public datasets  
 
-All experiments are implemented in:
-
-```
-MATLAB R2025B
-```
+All experiments are implemented in: **MATLAB R2025B**
 
 ---
 
@@ -116,11 +112,7 @@ Includes:
 - Six-task multi-output PLSR assessment  
 - Result visualization  
 
-Reproduces:
-
-```
-Main Text Fig. 1-5
-```
+Reproduces: **Main Text Fig. 1 to Fig. 5**
 
 ---
 
@@ -136,11 +128,7 @@ Evaluates:
 - Measurement time reduction  
 - Assessment accuracy  
 
-Reproduces:
-
-```
-Supplementary Fig. 8-9
-```
+Reproduces: **Supplementary Fig. 8 and Supplementary Fig. 9**
 
 ---
 
@@ -159,11 +147,7 @@ For each order:
 - Computational time  
 - Downstream ageing assessment accuracy  
 
-Reproduces:
-
-```
-Supplementary Fig. 10-11
-```
+Reproduces: **Supplementary Fig. 10 and Supplementary Fig. 11**
 
 ---
 
@@ -176,27 +160,15 @@ Evaluates:
 - Contribution of six internal-state parameters  
 - Task-wise feature relevance  
 
-Reproduces:
-
-```
-Supplementary Fig. 12
-```
+Reproduces: **Supplementary Fig. 12**
 
 ---
 
 ### 5-Number of Components
 
-PLSR latent component sensitivity study.
+PLSR latent component sensitivity study. **Components tested: 1 to 6**
 
-```
-Components tested: 1-6
-```
-
-Reproduces:
-
-```
-Supplementary Fig. 13
-```
+Reproduces: **Supplementary Fig. 13**
 
 ---
 
@@ -209,11 +181,7 @@ Engineering sorting validation workflow:
 3. Performance trajectory dispersion evaluation  
 4. Sorting accuracy metric  
 
-Reproduces:
-
-```
-Supplementary Fig. 14-16
-```
+Reproduces: **Supplementary Fig. 14 to Supplementary Fig. 16**
 
 ---
 
@@ -259,12 +227,7 @@ Each model solves six tasks:
 5. Mid-point-voltage-based SOH  
 6. Platform-capacity-based SOH  
 
-Reproduces:
-
-```
-Supplementary Fig. 17-22
-Supplementary Table 1-6
-```
+Reproduces: **Supplementary Fig. 17 to Supplementary Fig. 22** and **Supplementary Table 1 to Supplementary Table 6**
 
 ---
 
@@ -288,11 +251,7 @@ For each dataset:
 - Ageing assessment  
 - Sorting validation  
 
-Reproduces:
-
-```
-Supplementary Fig. 23-32
-```
+Reproduces: **Supplementary Fig. 23 to Supplementary Fig. 32**
 
 ---
 
