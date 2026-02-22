@@ -1,5 +1,5 @@
 # 8-Open-Source Datasets
-## External Validation on 10 Public Battery Ageing Datasets
+## External Validation on 10 Open-Source Battery Ageing Datasets
 
 This folder performs external validation of the proposed subminute cross-dimensional ageing assessment framework using 10 open-source lithium-ion battery datasets covering mainstream cathode chemistries (NCA, NCM, LFP, LMO). For each dataset, raw files are converted into a unified `OneCycle_*` format, internal-state features are constructed, ageing assessment is performed under either PLSR or 14 data-driven estimators, and sorting consistency is evaluated using K-means-based grouping.
 
@@ -199,7 +199,7 @@ Script:
 
 - Uses ageing assessment outputs to regroup cells  
 - Applies group-weighted K-means clustering  
-- Computes within-group trajectory dispersion as sorting consistency metric  
+- Computes within-group trajectory dispersion as sorting accuracy metric  
 - Produces normalized sorting performance for different task combinations  
 
 Input:
@@ -211,11 +211,11 @@ OneCycle_<DATASET>.mat
 
 Output:
 
-- Sorting consistency plots / statistics  
+- Sorting accuracy plots / statistics  
 
 ---
 
-## Optional: 14-Estimator Benchmarking
+## Stage 6: 14-Estimator Benchmarking
 
 Folder:
 
@@ -225,20 +225,18 @@ Folder:
 
 - Implements the same 14 estimators used in `7-Multiple-Estimators`  
 - Runs ageing assessment with each estimator on this dataset  
-- Produces estimator-wise accuracy and (if enabled) efficiency comparisons  
-
-This submodule is used when the external validation requires comparing the proposed PLSR pipeline against other estimators on public datasets.
+- Produces estimator-wise accuracy and efficiency comparisons  
 
 ---
 
 ## Recommended Execution Order (Per Dataset)
 
-1. `1-Data/` → generate `OneCycle_<DATASET>.mat`  
-2. `<DATASET>_4_featureView.m` → generate `Feature_ALL_<DATASET>.mat`  
-3. `<DATASET>_5_MutiTask_PLSR.m` → generate `PLSR_Result_*`  
-4. `<DATASET>_6_resultView.m` → generate evaluation plots  
-5. `<DATASET>_7_K_Means.m` → generate sorting consistency results  
-6. (Optional) `2-Multiple-Estimators/` → benchmark 14 estimators  
+1. `1-Data/`                            → generate `OneCycle_<DATASET>.mat`  
+2. `<DATASET>_4_featureView.m`          → generate `Feature_ALL_<DATASET>.mat`  
+3. `<DATASET>_5_MutiTask_PLSR.m`        → generate `PLSR_Result_*`  
+4. `<DATASET>_6_resultView.m`           → generate evaluation plots  
+5. `<DATASET>_7_K_Means.m`              → generate sorting consistency results  
+6. `2-Multiple-Estimators/`             → benchmark 14 estimators  
 
 ---
 
