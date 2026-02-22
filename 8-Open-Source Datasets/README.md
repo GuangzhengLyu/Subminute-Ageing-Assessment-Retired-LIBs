@@ -3,7 +3,7 @@
 
 This folder performs external validation of the proposed subminute cross-dimensional ageing assessment framework using 10 open-source lithium-ion battery datasets covering mainstream cathode chemistries (NCA, NCM, LFP, LMO). For each dataset, raw files are converted into a unified `OneCycle_*` format, internal-state features are constructed, ageing assessment is performed under either PLSR or 14 data-driven estimators, and sorting consistency is evaluated using K-means-based grouping.
 
-This module corresponds to Supplementary Fig. 23 to Supplementary Fig. 32.
+This module corresponds to **Supplementary Fig. 23 to Supplementary Fig. 32**.
 
 ---
 
