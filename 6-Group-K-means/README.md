@@ -1,7 +1,7 @@
 # 6-Group-K-means
-## Sorting Consistency Evaluation via Group-Weighted K-means
+## Sorting Accuracy Evaluation via Group-Weighted K-means
 
-This folder evaluates the sorting consistency of retired batteries based on ageing assessment outputs. Batteries are grouped using a group-weighted K-means algorithm, and the sorting quality is quantified by the within-group dispersion of ageing trajectories (lower dispersion indicates higher sorting consistency).
+This folder evaluates the sorting accuracy of retired batteries based on ageing assessment outputs. Batteries are grouped using a group-weighted K-means algorithm, and the sorting quality is quantified by the within-group dispersion of ageing trajectories (lower dispersion indicates higher sorting accuracy).
 
 The analysis compares sorting performance under different ageing-assessment task combinations (capacity-only vs adding RUL, internal-state features, and expanded-indicator SOHs). This module corresponds to Supplementary Fig. 14 to Supplementary Fig. 16.
 
@@ -36,11 +36,6 @@ Each script loads:
   - Dataset #2: ../1-Proposed/PLSR_Result_2_60_Y_Test_13.mat
   - Dataset #3: ../1-Proposed/PLSR_Result_3_50_Y_Test_13.mat
 
-Notes:
-
-- The scripts use `Estimation = squeeze(mean(Y_Test,1))'`, i.e., mean prediction over repeated runs.
-- Internal features are taken at the 13th sampling terminal voltage: `squeeze(Feature(:,13,:))`.
-
 ---
 
 ## What Is Clustered
@@ -65,14 +60,14 @@ The clustering feature vector is built from four feature groups (Xg{1}-Xg{4}), t
   `Xg{4} = [Estimation(:,3:6)]`  
   Four expanded-indicator SOHs (N×4)
 
-### Four sorting settings (Kind = 1…4)
+### Four sorting settings (Label = 1…4)
 
 The scripts loop over `Kind = 1:4` and progressively add groups:
 
-1. Kind 1: SOH only (Group 1)  
-2. Kind 2: SOH + RUL (Group 1-2)  
-3. Kind 3: SOH + RUL + internal features (Group 1-3)  
-4. Kind 4: SOH + RUL + internal features + expanded SOHs (Group 1-4)
+1. Label 1: SOH only (Group 1)  
+2. Label 2: SOH + RUL (Group 1-2)  
+3. Label 3: SOH + RUL + internal features (Group 1-3)  
+4. Label 4: SOH + RUL + internal features + expanded SOHs (Group 1-4)
 
 For groups not included, the script explicitly fills them with zeros to keep the same dimensional structure during concatenation.
 
