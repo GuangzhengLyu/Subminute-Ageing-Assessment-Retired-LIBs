@@ -1,7 +1,7 @@
 # 7-Multiple-Estimators
 ## Benchmarking 14 Data-Driven Estimators for Multi-Task Ageing Assessment
 
-This folder benchmarks 14 data-driven estimators under an identical ageing-assessment setting. Each estimator is used to solve the same six ageing tasks using the same six internal-state features extracted from relaxation-voltage modeling. The goal is to compare assessment accuracy (and, if enabled in scripts, evaluation time) across estimators under a controlled protocol.
+This folder benchmarks 14 data-driven estimators under an identical ageing-assessment setting. Each estimator is used to solve the same six ageing tasks using the same six internal-state features extracted from relaxation-voltage modeling. The goal is to compare assessment accuracy and assessment time across estimators under a controlled protocol.
 
 This module corresponds to Supplementary Fig. 17 to Supplementary Fig. 22 and Supplementary Table 1 to Supplementary Table 6.
 
@@ -132,10 +132,6 @@ SCU3_6_resultView_3.m
 - Loads the saved `Y_Test` results for all sampling voltages  
 - Computes prediction error statistics (e.g., RMSE) for each task  
 - Summarizes the estimator’s overall performance for that dataset  
-
-Important:
-
-- `SCU3_6_resultView_*` should be executed inside the estimator subfolder so that it can locate the corresponding `<EST>_Result_*` files.
 
 ---
 
