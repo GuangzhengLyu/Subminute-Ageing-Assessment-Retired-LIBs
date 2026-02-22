@@ -142,10 +142,6 @@ What it does:
 - Aggregates RMSE across repeats and tasks
 - Produces summary curves for component-number comparison
 
-Important:
-
-- `SCU3_6_resultView_*.m` must be executed inside the corresponding component folder so it can locate `PLSR{c}_Result_*` files in the current directory.
-
 ---
 
 ## Recommended Execution Order
