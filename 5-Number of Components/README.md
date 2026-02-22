@@ -3,7 +3,7 @@
 
 This folder evaluates how the number of latent components in Partial Least Squares Regression (PLSR) affects ageing assessment accuracy. The same features, targets, and cross-validation protocol are used across all experiments, while only the PLSR component number is changed to isolate its impact.
 
-This module corresponds to Supplementary Fig. 13.
+This module corresponds to **Supplementary Fig. 13**.
 
 ---
 
