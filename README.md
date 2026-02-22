@@ -119,7 +119,7 @@ Includes:
 Reproduces:
 
 ```
-Main Text Fig. 1–5
+Main Text Fig. 1-5
 ```
 
 ---
@@ -139,7 +139,7 @@ Evaluates:
 Reproduces:
 
 ```
-Supplementary Fig. 8–9
+Supplementary Fig. 8-9
 ```
 
 ---
@@ -162,7 +162,7 @@ For each order:
 Reproduces:
 
 ```
-Supplementary Fig. 10–11
+Supplementary Fig. 10-11
 ```
 
 ---
@@ -189,7 +189,7 @@ Supplementary Fig. 12
 PLSR latent component sensitivity study.
 
 ```
-Components tested: 1–6
+Components tested: 1-6
 ```
 
 Reproduces:
@@ -212,7 +212,7 @@ Engineering sorting validation workflow:
 Reproduces:
 
 ```
-Supplementary Fig. 14–16
+Supplementary Fig. 14-16
 ```
 
 ---
@@ -262,8 +262,8 @@ Each model solves six tasks:
 Reproduces:
 
 ```
-Supplementary Fig. 17–22
-Supplementary Table 1–6
+Supplementary Fig. 17-22
+Supplementary Table 1-6
 ```
 
 ---
@@ -291,7 +291,7 @@ For each dataset:
 Reproduces:
 
 ```
-Supplementary Fig. 23–32
+Supplementary Fig. 23-32
 ```
 
 ---
@@ -349,7 +349,7 @@ Used by:
 5-Number of Components    Sup. Fig. 13            
 6-Group-K-means           Sup. Fig. 14-16         
 7-Multiple-Estimators     Sup. Fig. 17-22     Sup. Table 1-6      
-8-Open-Source Datasets    Sup. Fig. 23–32         
+8-Open-Source Datasets    Sup. Fig. 23-32         
 ```
 
 ---
