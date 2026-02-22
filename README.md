@@ -366,14 +366,22 @@ Three-year ageing datasets of retired lithium-ion batteries under consecutive re
 Raw data and code deposited in Zenodo:
 
 ```
-Dataset Part 1: https://zenodo.org/records/18633811
-Dataset Part 2: https://zenodo.org/records/17904751
-Dataset Part 3: https://zenodo.org/records/17912803
-Dataset Part 4: https://zenodo.org/records/17912818
-Dataset Part 5: https://zenodo.org/records/17912831
-Dataset Part 6: https://zenodo.org/records/17913097
-Dataset Part 7: https://zenodo.org/records/17913616
-Dataset Part 8: https://zenodo.org/records/17913646
+Dataset Part 1:
+https://zenodo.org/records/18633811
+Dataset Part 2:
+https://zenodo.org/records/17904751
+Dataset Part 3:
+https://zenodo.org/records/17912803
+Dataset Part 4:
+https://zenodo.org/records/17912818
+Dataset Part 5:
+https://zenodo.org/records/17912831
+Dataset Part 6:
+https://zenodo.org/records/17913097
+Dataset Part 7:
+https://zenodo.org/records/17913616
+Dataset Part 8:
+https://zenodo.org/records/17913646
 ```
 
 Processed datasets and feature files required to reproduce all figures are included in this repository.
