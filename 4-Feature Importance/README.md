@@ -168,7 +168,7 @@ SCU_SHAP_2.m
 SCU_SHAP_3.m
 ```
 
-To reproduce Supplementary Fig. 12 consistently, keep fixed:
+To reproduce **Supplementary Fig. 12** consistently, keep fixed:
 
 ```
 rng(seed)
