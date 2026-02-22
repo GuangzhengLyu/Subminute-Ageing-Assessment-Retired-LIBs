@@ -95,7 +95,6 @@ Purpose:
 
 Input:
 
-- Files inside `1-Raw Data`  
 - Intermediate files inside `2-Cycle`  
 - Intermediate files inside `3-Record`  
 
