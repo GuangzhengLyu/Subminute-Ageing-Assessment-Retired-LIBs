@@ -1,9 +1,7 @@
-# 3-RC Models  
+# 3-RC Models
 ## RC Model Order Study for Feature Extraction and Ageing Assessment
 
-This folder implements the comparative study of RC equivalent-circuit model orders (from 1RC to 5RC) for retired-battery subminute diagnostics.
-
-For each RC order, the pipeline is kept identical except for the model order used to fit relaxation voltage. Therefore, differences in:
+This folder implements the comparative study of RC equivalent-circuit model orders (from 1RC to 5RC) for retired-battery subminute diagnostics. For each RC order, the pipeline is kept identical except for the model order used to fit relaxation voltage, so that differences in:
 
 - Feature extraction efficiency (runtime)
 - Model fitting accuracy (RMSE of relaxation-voltage fitting)
@@ -11,22 +9,19 @@ For each RC order, the pipeline is kept identical except for the model order use
 
 can be attributed to RC order only.
 
-This module corresponds to **Supplementary Fig. 10–11** (RC order comparison).
+This module corresponds to Supplementary Fig. 10 and Supplementary Fig. 11 (RC order comparison).
 
 ---
 
 ## Folder Structure
 
+```
 1RC/
-
 2RC/
-
 3RC/
-
 4RC/
-
 5RC/
-
+```
 
 Each subfolder is self-contained and follows the same internal structure.
 
@@ -36,79 +31,79 @@ Each subfolder is self-contained and follows the same internal structure.
 
 Each `{k}RC/` folder contains:
 
-### (A) Extracted Feature Files
+### (A) Extracted feature files
 
+```
 Feature_1_ALL_{k}RC.mat
-
 Feature_2_ALL_{k}RC.mat
-
 Feature_3_ALL_{k}RC.mat
-
+```
 
 ### (B) Scripts
 
+```
 SCU3_4_featureView_1_{k}RC.m
-
 SCU3_4_featureView_2_{k}RC.m
-
 SCU3_4_featureView_3_{k}RC.m
 
 SCU3_5_MutiTask_PLSR_1_{k}RC.m
-
 SCU3_5_MutiTask_PLSR_2_{k}RC.m
-
 SCU3_5_MutiTask_PLSR_3_{k}RC.m
 
 SCU3_6_resultView_1.m
-
 SCU3_6_resultView_2.m
-
 SCU3_6_resultView_3.m
+```
 
-
-**Notes:**
+Notes:
 
 - `{k} = 1, 2, 3, 4, 5` indicates RC order.
-- `SCU3_6_resultView_*.m` is shared for visualization and reused across RC orders.
+- `SCU3_6_resultView_*.m` is shared for visualization and is reused across RC orders.
 
 ---
 
 ## Inputs and Outputs
 
-### Required Inputs (Shared Across All RC Orders)
+### Required inputs (shared across all RC orders)
 
-- `OneCycle_1.mat`
-- `OneCycle_2.mat`
-- `OneCycle_3.mat`
+```
+OneCycle_1.mat
+OneCycle_2.mat
+OneCycle_3.mat
+```
 
 (located in the parent directory)
 
 ---
 
-### Feature Outputs (Per RC Order)
+### Feature outputs (per RC order)
 
-`Feature_x_ALL_{k}RC.mat` contains RC-identified internal-state parameters at **13 sampling terminal voltages (3.0–4.2 V)**.
+```
+Feature_x_ALL_{k}RC.mat
+```
 
-- For **1RC**, the features are typically:
-  - `Uoc`
-  - `R0`
-  - `R1`
-  - `C1`
+Contains RC-identified internal-state parameters at 13 sampling terminal voltages (3.0–4.2 V).
 
-- For **kRC**, the features expand to:
-  - `Uoc`
-  - `R0`
-  - `{R_i, C_i}` for `i = 1 ... k`
+- For 1RC, the features are typically:
+  ```
+  Uoc, R0, R1, C1
+  ```
+- For kRC, the features expand to:
+  ```
+  Uoc, R0, R1, C1, ..., Rk, Ck
+  ```
 
 ---
 
-### Ageing Assessment Outputs (Per RC Order)
+### Ageing assessment outputs (per RC order)
 
-Multi-task PLSR scripts save prediction results as:
+The multi-task PLSR scripts save prediction results as:
 
+```
 PLSR_Result_*_{k}RC.mat
+```
 
-(Depending on implementation, these files may be saved in the current folder or an internal `Result/` directory. Maintain a consistent structure for visualization.)
+(Depending on your implementation, these files may be saved in the current folder; if you maintain an internal `Result/` directory, store them there consistently for subsequent visualization.)
 
 ---
 
@@ -118,34 +113,52 @@ Suffix `_1`, `_2`, `_3` correspond to Dataset #1, #2, and #3.
 
 ---
 
-### Stage 1: RC-Based Feature Extraction + Model Fitting Accuracy  
-`SCU3_4_featureView_1/2/3_{k}RC.m`
+## Stage 1: RC-Based Feature Extraction + Model Fitting Accuracy
 
-- Extracts relaxation voltage segments at multiple sampling voltages
-- Fits the `{k}RC` model to relaxation-voltage decay
+```
+SCU3_4_featureView_1_{k}RC.m
+SCU3_4_featureView_2_{k}RC.m
+SCU3_4_featureView_3_{k}RC.m
+```
+
+- Extracts relaxation voltage segments at multiple sampling voltages  
+- Fits the `{k}RC` model to relaxation-voltage decay  
 - Outputs:
-  - RC parameters used as features
-  - Fitting RMSE (for model-order accuracy comparison)
-  - Runtime measured by `tic/toc` (for efficiency comparison)
+  - RC parameters used as features  
+  - Fitting RMSE (for model-order accuracy comparison)  
+  - Runtime measured by `tic/toc` (for efficiency comparison)  
 
-**Input:**
+Input:
 
-- `OneCycle_x.mat`
+```
+OneCycle_x.mat
+```
 
-**Output:**
+Output:
 
-- `Feature_x_ALL_{k}RC.mat`
-- Console statistics for mean fitting RMSE and timing
+```
+Feature_x_ALL_{k}RC.mat
+```
+
+Console statistics:
+
+- Mean fitting RMSE  
+- Runtime statistics  
 
 ---
 
-### Stage 2: Multi-Task Ageing Assessment (PLSR)  
-`SCU3_5_MutiTask_PLSR_1/2/3_{k}RC.m`
+## Stage 2: Multi-Task Ageing Assessment (PLSR)
 
-- Uses `{k}RC` features
-- Performs the same multi-task ageing assessment protocol for fair comparison
+```
+SCU3_5_MutiTask_PLSR_1_{k}RC.m
+SCU3_5_MutiTask_PLSR_2_{k}RC.m
+SCU3_5_MutiTask_PLSR_3_{k}RC.m
+```
 
-**Tasks (consistent across RC orders):**
+- Uses `{k}RC` features  
+- Performs the same multi-task ageing assessment protocol for fair comparison  
+
+Tasks (consistent across RC orders):
 
 1. Capacity-based SOH  
 2. RUL  
@@ -154,32 +167,43 @@ Suffix `_1`, `_2`, `_3` correspond to Dataset #1, #2, and #3.
 5. Mid-point-voltage-based SOH  
 6. Platform-capacity-based SOH  
 
-- Uses leave-one-out cross-validation
-- Repeats prediction (e.g., 100 runs) for statistical stability
+- Uses leave-one-out cross-validation  
+- Repeats prediction (e.g., 100 runs) for statistical stability  
 
-**Input:**
+Input:
 
-- `Feature_x_ALL_{k}RC.mat`
-- `OneCycle_x.mat` (for labels and indicator extraction)
+```
+Feature_x_ALL_{k}RC.mat
+OneCycle_x.mat
+```
 
-**Output:**
+Output:
 
-- `PLSR_Result_*_{k}RC.mat`
+```
+PLSR_Result_*_{k}RC.mat
+```
 
 ---
 
-### Stage 3: Result Visualization (Assessment Accuracy Comparison)  
-`SCU3_6_resultView_1/2/3.m`
+## Stage 3: Result Visualization (Assessment Accuracy Comparison)
 
-- Loads PLSR prediction outputs
-- Visualizes prediction vs ground truth and error statistics
+```
+SCU3_6_resultView_1.m
+SCU3_6_resultView_2.m
+SCU3_6_resultView_3.m
+```
+
+- Loads PLSR prediction outputs  
+- Visualizes prediction vs ground truth and error statistics  
 - Used to compare:
-  - Accuracy across RC orders
-  - Dispersion and robustness across datasets
+  - Accuracy across RC orders  
+  - Dispersion and robustness across datasets  
 
-**Input:**
+Input:
 
-- `PLSR_Result_*_{k}RC.mat`
+```
+PLSR_Result_*_{k}RC.mat
+```
 
 ---
 
@@ -187,11 +211,13 @@ Suffix `_1`, `_2`, `_3` correspond to Dataset #1, #2, and #3.
 
 For each `{k}RC/` folder and each dataset:
 
-1. `SCU3_4_featureView_{x}_{k}RC`
-2. `SCU3_5_MutiTask_PLSR_{x}_{k}RC`
-3. `SCU3_6_resultView_{x}`
+```
+1. SCU3_4_featureView_{x}_{k}RC
+2. SCU3_5_MutiTask_PLSR_{x}_{k}RC
+3. SCU3_6_resultView_{x}
+```
 
-Repeat for `{k} = 1 ... 5`, then aggregate results to reproduce the RC-order comparison in **Supplementary Fig. 10–11**.
+Repeat for `{k} = 1 to 5`, then aggregate results to reproduce the RC-order comparison in Supplementary Fig. 10 to Supplementary Fig. 11.
 
 ---
 
@@ -199,11 +225,11 @@ Repeat for `{k} = 1 ... 5`, then aggregate results to reproduce the RC-order com
 
 To isolate the effect of RC order, all non-model factors are held constant:
 
-- Same datasets (`OneCycle_1–3`)
-- Same sampling terminal voltages (13 points from 3.0 to 4.2 V)
-- Same downstream estimator (multi-task PLSR)
-- Same cross-validation protocol
-- Same evaluation metrics
+- Same datasets (OneCycle_1 to 3)  
+- Same sampling terminal voltages (13 points from 3.0 to 4.2 V)  
+- Same downstream estimator (multi-task PLSR)  
+- Same cross-validation protocol  
+- Same evaluation metrics  
 
 Only the RC model order differs.
 
@@ -214,4 +240,4 @@ Only the RC model order differs.
 If you use the dataset or code in this repository, please cite the associated work:
 
 Lyu, G., Tao, S., Zhang, H., Goetz, S. M., Zio, E. & Miao, Q.  
-*Subminute diagnostics reveal hidden heterogeneity of deep ageing patterns beyond capacity for second-life lithium-ion batteries.*
+Subminute diagnostics reveal hidden heterogeneity of deep ageing patterns beyond capacity for second-life lithium-ion batteries.
