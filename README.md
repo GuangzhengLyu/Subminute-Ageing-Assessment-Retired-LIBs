@@ -2,12 +2,32 @@
 
 This repository accompanies the manuscript:
 
-**“Subminute diagnostics reveal hidden heterogeneity of deep ageing patterns beyond capacity for second-life lithium-ion batteries”**  
+“Subminute diagnostics reveal hidden heterogeneity of deep ageing patterns beyond capacity for second-life lithium-ion batteries”  
+
 and its Supplementary Information.
 
-This work addresses rapid and cross-dimensional ageing assessment of retired lithium-ion batteries under consecutive retirements and deep ageing conditions. A three-year ageing dataset is reported, covering **590 samples**, **119,691 cycles**, and over **3.25 billion time-series entries** across unexpected, normal, and secondary retirement scenarios.
+This work addresses rapid and cross-dimensional ageing assessment of retired lithium-ion batteries under consecutive retirements and deep ageing conditions. A three-year ageing dataset is reported, covering:
 
-Beyond capacity, four service-relevant performance indicators—energy efficiency, constant-current charge rate, mid-point voltage, and platform discharge capacity—are analysed to characterize deep ageing behaviour. A subminute assessment framework is developed using pulse-inspection relaxation voltage (PIRV) and a second-order RC equivalent circuit model. Six internal-state features extracted from 30 seconds of relaxation voltage data enable joint assessment of SOH, RUL, and expanded SOH indicators via partial least squares regression.
+- 590 samples  
+- 119,691 cycles  
+- Over 3.25 billion time-series entries  
+
+across unexpected, normal, and secondary retirement scenarios.
+
+Beyond capacity, four service-relevant performance indicators are analysed:
+
+- Energy efficiency  
+- Constant-current charge rate  
+- Mid-point voltage  
+- Platform discharge capacity  
+
+A subminute assessment framework is developed using pulse-inspection relaxation voltage and a second-order RC equivalent circuit model. Six internal-state features extracted from 30 seconds of relaxation voltage data enable joint assessment of:
+
+- SOH  
+- RUL  
+- Expanded SOH indicators  
+
+via partial least squares regression.
 
 All code and processed data required to reproduce the reported results are provided in this repository.
 
@@ -26,56 +46,53 @@ This repository implements the full experimental and computational pipeline for:
 - Sorting-consistency validation  
 - Cross-chemistry external validation on 10 public datasets  
 
-All experiments are implemented in **MATLAB R2025B**.
+All experiments are implemented in:
+
+```
+MATLAB R2025B
+```
 
 ---
 
 ## 2. Repository Structure
+
+```
 0-Data Process
-
 1-Proposed
-
 2-RV and PIRV
-
 3-RC Models
-
 4-Feature Importance
-
 5-Number of Components
-
 6-Group-K-means
-
 7-Multiple-Estimators
-
 8-Open-Source Datasets
 
-
 OneCycle_1.mat
-
 OneCycle_2.mat
-
 OneCycle_3.mat
 
-
 Feature_1_ALL.mat
-
 Feature_2_ALL.mat
-
 Feature_3_ALL.mat
+```
 
 ---
 
 ## 3. Folder-Level Description (Figure Mapping Included)
 
+---
+
 ### 0-Data Process
 
 Generates three processed datasets:
 
-- `OneCycle_1.mat` – Unexpected retirement  
-- `OneCycle_2.mat` – Normal retirement  
-- `OneCycle_3.mat` – Secondary retirement  
+```
+OneCycle_1.mat  % Unexpected retirement
+OneCycle_2.mat  % Normal retirement
+OneCycle_3.mat  % Secondary retirement
+```
 
-Each `OneCycle_x` file contains:
+Each `OneCycle_x.mat` contains:
 
 - Full voltage-current-time sequence of a complete charge-discharge cycle  
 - Ageing trajectory (cycle index)  
@@ -101,7 +118,9 @@ Includes:
 
 Reproduces:
 
-- **Main Text Fig. 1–5**
+```
+Main Text Fig. 1–5
+```
 
 ---
 
@@ -110,7 +129,7 @@ Reproduces:
 Comparison between:
 
 - Conventional full-charge relaxation voltage (RV)  
-- Pulse-inspection relaxation voltage (PIRV)
+- Pulse-inspection relaxation voltage (PIRV)  
 
 Evaluates:
 
@@ -119,13 +138,19 @@ Evaluates:
 
 Reproduces:
 
-- **Supplementary Fig. 8–9**
+```
+Supplementary Fig. 8–9
+```
 
 ---
 
 ### 3-RC Models
 
-Comparison of RC model order (1–5 RC modules).
+Comparison of RC model order:
+
+```
+1RC to 5RC
+```
 
 For each order:
 
@@ -136,7 +161,9 @@ For each order:
 
 Reproduces:
 
-- **Supplementary Fig. 10–11**
+```
+Supplementary Fig. 10–11
+```
 
 ---
 
@@ -151,18 +178,25 @@ Evaluates:
 
 Reproduces:
 
-- **Supplementary Fig. 12**
+```
+Supplementary Fig. 12
+```
 
 ---
 
 ### 5-Number of Components
 
-PLSR latent component sensitivity study.  
-Components tested: 1–6  
+PLSR latent component sensitivity study.
+
+```
+Components tested: 1–6
+```
 
 Reproduces:
 
-- **Supplementary Fig. 13**
+```
+Supplementary Fig. 13
+```
 
 ---
 
@@ -170,14 +204,16 @@ Reproduces:
 
 Engineering sorting validation workflow:
 
-1. Loading ageing assessment results  
+1. Load ageing assessment results  
 2. K-means clustering  
 3. Performance trajectory dispersion evaluation  
-4. Sorting consistency metric  
+4. Sorting accuracy metric  
 
 Reproduces:
 
-- **Supplementary Fig. 14–16**
+```
+Supplementary Fig. 14–16
+```
 
 ---
 
@@ -185,28 +221,34 @@ Reproduces:
 
 Implements 14 regression-based estimators.
 
-**Regression & Statistical Models**
+Regression & Statistical:
 
-- MLR  
-- GPR  
-- SVR  
-- PLSR  
+```
+MLR
+GPR
+SVR
+PLSR
+```
 
-**Conventional Machine Learning**
+Conventional Machine Learning:
 
-- DT  
-- RF  
-- XGBoost  
-- Bayesian Regression  
-- BNN  
-- KNN  
-- ELM  
+```
+DT
+RF
+XGBoost
+Bayesian Regression
+BNN
+KNN
+ELM
+```
 
-**Deep Learning**
+Deep Learning:
 
-- BPNN  
-- DNN  
-- CNN  
+```
+BPNN
+DNN
+CNN
+```
 
 Each model solves six tasks:
 
@@ -219,8 +261,10 @@ Each model solves six tasks:
 
 Reproduces:
 
-- **Supplementary Fig. 17–22**  
-- **Supplementary Table 1–6**
+```
+Supplementary Fig. 17–22
+Supplementary Table 1–6
+```
 
 ---
 
@@ -230,10 +274,12 @@ Validation on 10 open-source datasets.
 
 Chemistries:
 
-- NCA  
-- NCM  
-- LFP  
-- LMO  
+```
+NCA
+NCM
+LFP
+LMO
+```
 
 For each dataset:
 
@@ -244,7 +290,9 @@ For each dataset:
 
 Reproduces:
 
-- **Supplementary Fig. 23–32**
+```
+Supplementary Fig. 23–32
+```
 
 ---
 
@@ -252,77 +300,81 @@ Reproduces:
 
 ### OneCycle_1/2/3.mat
 
-Provide:
+Contain:
 
 - Full-cycle time series  
 - Ageing trajectory  
 - Expanded indicators  
 
-Loaded by scripts in:
+Used by:
 
-- 1-Proposed  
-- 2-RV and PIRV  
-- 3-RC Models  
-- 4-Feature Importance  
-- 5-Number of Components  
-- 6-Group-K-means  
-- 7-Multiple-Estimators  
+```
+1-Proposed
+2-RV and PIRV
+3-RC Models
+4-Feature Importance
+5-Number of Components
+6-Group-K-means
+7-Multiple-Estimators
+```
 
 ---
 
 ### Feature_1/2/3_ALL.mat
 
-Provide:
+Contain:
 
 - Extracted internal-state features  
 
-Loaded by scripts in:
+Used by:
 
-- 1-Proposed  
-- 3-RC Models  
-- 4-Feature Importance  
-- 5-Number of Components  
-- 6-Group-K-means  
-- 7-Multiple-Estimators  
+```
+1-Proposed
+3-RC Models
+4-Feature Importance
+5-Number of Components
+6-Group-K-means
+7-Multiple-Estimators
+```
 
 ---
 
 ## 5. Figure-to-Code Mapping
 
-| Figure | Code Folder |
-|--------|------------|
-| Fig. 1–5 | 1-Proposed |
-| Sup. Fig. 8–9 | 2-RV and PIRV |
-| Sup. Fig. 10–11 | 3-RC Models |
-| Sup. Fig. 12 | 4-Feature Importance |
-| Sup. Fig. 13 | 5-Number of Components |
-| Sup. Fig. 14–16 | 6-Group-K-means |
-| Sup. Fig. 17–22 | 7-Multiple-Estimators |
-| Sup. Fig. 23–32 | 8-Open-Source Datasets |
+```
+Fig. 1–5               → 1-Proposed
+Sup. Fig. 8–9          → 2-RV and PIRV
+Sup. Fig. 10–11        → 3-RC Models
+Sup. Fig. 12           → 4-Feature Importance
+Sup. Fig. 13           → 5-Number of Components
+Sup. Fig. 14–16        → 6-Group-K-means
+Sup. Fig. 17–22        → 7-Multiple-Estimators
+Sup. Fig. 23–32        → 8-Open-Source Datasets
+```
 
 ---
 
 ## 6. Data Availability
 
-The raw experimental data and code have been deposited in Zenodo.
-
-The dataset includes:
+Three-year ageing dataset covering:
 
 - 590 samples  
-- 119,691 cycles  
-- 3.25 billion data entries  
+- 119,691 distinct cycles  
+- 3.25 billion unique data entries  
 - 440 GB raw experimental data  
 
-Zenodo Records:
+Raw data and code deposited in Zenodo:
 
-- Part 1: https://zenodo.org/records/18633811  
-- Part 2: https://zenodo.org/records/17904751  
-- Part 3: https://zenodo.org/records/17912803  
-- Part 4: https://zenodo.org/records/17912818  
-- Part 5: https://zenodo.org/records/17912831  
-- Part 6: https://zenodo.org/records/17913097  
-- Part 7: https://zenodo.org/records/17913616  
-- Part 8: https://zenodo.org/records/17913646  
+```
+https://zenodo.org/records/18633811
+https://zenodo.org/records/17904751
+https://zenodo.org/records/17912803
+https://zenodo.org/records/17912818
+https://zenodo.org/records/17912831
+https://zenodo.org/records/17913097
+https://zenodo.org/records/17913616
+https://zenodo.org/records/17913646
+```
 
 Processed datasets and feature files required to reproduce all figures are included in this repository.
 
@@ -345,21 +397,23 @@ are provided in this repository.
 
 ## 8. Computational Environment
 
-- MATLAB R2025B  
-- Intel Core i9-12900K  
-- Leave-one-out cross-validation  
-- Random seeds fixed where applicable  
-- Large MAT files saved using `-v7.3`
+```
+MATLAB R2025B
+Intel Core i9-12900K
+Leave-one-out cross-validation
+Random seeds fixed where applicable
+Large MAT files saved using -v7.3
+```
 
 ---
 
-## 9. Minimal Reproducibility Path
+## 9. Reproducibility Workflow (Minimal Path)
 
-To reproduce the main results:
+To reproduce main results:
 
-1. Run `1-Proposed`
-2. Run `6-Group-K-means` for sorting validation
-3. Execute `7-Multiple-Estimators` if estimator benchmarking is required
+1. Run `1-Proposed`  
+2. Run `6-Group-K-means` for sorting validation  
+3. Execute estimator comparison if needed (`7-Multiple-Estimators`)  
 
 ---
 
@@ -368,4 +422,4 @@ To reproduce the main results:
 If you use the dataset or code in this repository, please cite:
 
 Lyu, G., Tao, S., Zhang, H., Goetz, S. M., Zio, E. & Miao, Q.  
-*Subminute diagnostics reveal hidden heterogeneity of deep ageing patterns beyond capacity for second-life lithium-ion batteries.*
+Subminute diagnostics reveal hidden heterogeneity of deep ageing patterns beyond capacity for second-life lithium-ion batteries.
