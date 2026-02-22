@@ -14,7 +14,7 @@ The purpose of this module is to:
 4. Compare assessment accuracy and measurement efficiency  
 5. Quantify time reduction achieved by PIRV  
 
-This module reproduces the results shown in Supplementary Fig. 8 and Supplementary Fig. 9.
+This module reproduces the results shown in **Supplementary Fig. 8 and Supplementary Fig. 9**.
 
 ---
 
@@ -66,7 +66,7 @@ Suffix `_1`, `_2`, `_3` correspond to Dataset #1, #2, and #3.
 
 ---
 
-## Stage 1: Feature Extraction Based on FCRV
+## Stage 1: Feature Extraction Based on RV
 
 ```
 SCU3_4_featureView_1.m
@@ -110,7 +110,7 @@ SCU3_4_TimeMeasure_3.m
 - Computes full measurement duration required for RV  
 - Compares with PIRV measurement time  
 - Quantifies time reduction ratio  
-- Supports Supplementary Fig. 9  
+- Supports **Supplementary Fig. 9**  
 
 ---
 
@@ -162,11 +162,7 @@ Results from Stage 3
 PIRV results (from 1-Proposed)
 ```
 
-Corresponds to:
-
-```
-Supplementary Fig. 8 to Fig. 9
-```
+Corresponds to: **Supplementary Fig. 8 and Supplementary Fig. 9**
 
 ---
 
