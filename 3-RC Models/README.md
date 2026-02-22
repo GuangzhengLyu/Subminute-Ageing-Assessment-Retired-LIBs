@@ -9,7 +9,7 @@ This folder implements the comparative study of RC equivalent-circuit model orde
 
 can be attributed to RC order only.
 
-This module corresponds to Supplementary Fig. 10 and Supplementary Fig. 11 (RC order comparison).
+This module corresponds to Supplementary Fig. 10 and Supplementary Fig. 11.
 
 ---
 
