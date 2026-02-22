@@ -179,19 +179,6 @@ To ensure fair comparison across component numbers:
 
 ---
 
-## Notes on Runtime and Storage
-
-- The pipeline is computationally intensive because it nests:
-
-```
-13 sampling voltages × 100 repeats × N leave-one-out fits
-```
-
-- Each sampling voltage saves one `.mat` file containing `Y_Test`.
-- Re-running scripts will overwrite existing `PLSR{c}_Result_*` files.
-
----
-
 ## Citation
 
 If you use the dataset or code in this repository, please cite the associated work:
