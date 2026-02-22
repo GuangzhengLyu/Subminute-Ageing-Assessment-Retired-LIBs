@@ -43,7 +43,7 @@ This repository implements the full experimental and computational pipeline for:
 - Second-order RC equivalent circuit parameter extraction  
 - Subminute cross-dimensional ageing assessment  
 - Multi-model comparison (14 estimators)  
-- Sorting-consistency validation  
+- Sorting-accuracy validation  
 - Cross-chemistry external validation on 10 public datasets  
 
 All experiments are implemented in:
@@ -284,7 +284,7 @@ LMO
 For each dataset:
 
 - Data preprocessing  
-- PIRV feature extraction  
+- Relaxation voltage and internal state feature extraction  
 - Ageing assessment  
 - Sorting validation  
 
