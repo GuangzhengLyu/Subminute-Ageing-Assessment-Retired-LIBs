@@ -1,0 +1,46 @@
+close all
+
+NumData = length(OneCycle);
+
+for i = 1:NumData
+    MyCapa(i) = OneCycle(i).OrigCapaAh;
+end
+[A B] = sort(MyCapa);
+for i = 1:NumData
+    Index = B(i);
+
+    %% 早期老化
+    ColorMap = [0.8*(NumData-i)/NumData 0.5+0.8*(NumData-i)/(2*NumData) 0];
+
+    %% 深度老化
+    % if min(OneCycle(Index).Cycle.DiscCapaAh)<=2.1
+    %     Life = min(find(OneCycle(Index).Cycle.DiscCapaAh <= 2.1));
+    % else
+    %     Life = length(OneCycle(Index).Cycle.DiscCapaAh);
+    % end
+    % ColorMap = [1 0.4+0.6*(Life-200)/605 0.2-0.2*(Life-200)/605];
+
+    FilterLength = 51;
+
+    Capa{Index,1} = OneCycle(Index).Cycle.DiscCapaAh;
+    hampel
+    Capa{Index,1} = sgolayfilt(Capa{Index,1}, 3, FilterLength);
+    
+    EnergyRate{Index,1} = OneCycle(Index).Cycle.EnergyRate(2:end-1);
+    EnergyRate{Index,1} = sgolayfilt(EnergyRate{Index,1}, 3, FilterLength);
+
+    ConstCharRate{Index,1} = OneCycle(Index).Cycle.ConstCharRate(2:end-1);
+    ConstCharRate{Index,1} = sgolayfilt(ConstCharRate{Index,1}, 3, FilterLength);
+
+    MindVoltV{Index,1} = OneCycle(Index).Cycle.MindVoltV;
+    MindVoltV{Index,1} = sgolayfilt(MindVoltV{Index,1}, 3, FilterLength);
+
+    PlatfCapaAh{Index,1} = OneCycle(Index).Cycle.PlatfCapaAh;
+    PlatfCapaAh{Index,1} = sgolayfilt(PlatfCapaAh{Index,1}, 3, FilterLength);
+    
+    figure(1),hold on,box on,plot(Capa{Index,1},'-','color',ColorMap);
+    figure(2),hold on,box on,plot(EnergyRate{Index,1},'-','color',ColorMap);
+    figure(3),hold on,box on,plot(ConstCharRate{Index,1},'-','color',ColorMap);
+    figure(4),hold on,box on,plot(MindVoltV{Index,1},'-','color',ColorMap);
+    figure(5),hold on,box on,plot(PlatfCapaAh{Index,1},'-','color',ColorMap);
+end
