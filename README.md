@@ -10,12 +10,8 @@ This GitHub repository does **NOT** include the three processed ageing datasets 
 
 To reproduce the reported results, please:
 
-1. Download the required datasets from Zenodo  
+1. Download the required datasets from Zenodo  👉 https://zenodo.org/records/18694513
 2. Place them in the root directory: **Subminute-Ageing-Assessment-Retired-LIBs/**
-
-Zenodo record (processed datasets + complete ready-to-run version):
-
-👉 https://zenodo.org/records/18694513
 
 Alternatively, you may directly download the **full ready-to-run package** from the same Zenodo record.
 
