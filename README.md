@@ -1,5 +1,28 @@
 # Subminute-Ageing-Assessment-Retired-LIBs
 
+🚨 **IMPORTANT — THIS REPOSITORY IS NOT SELF-CONTAINED**
+
+This GitHub repository does **NOT** include the three processed ageing datasets required to execute the code:
+
+- `OneCycle_1.mat`
+- `OneCycle_2.mat`
+- `OneCycle_3.mat`
+
+To reproduce the reported results, please:
+
+1. Download the required datasets from Zenodo  
+2. Place them in the root directory: **Subminute-Ageing-Assessment-Retired-LIBs/**
+
+Zenodo record (processed datasets + complete ready-to-run version):
+
+👉 https://zenodo.org/records/18694513
+
+Alternatively, you may directly download the **full ready-to-run package** from the same Zenodo record.
+
+---
+
+## Manuscript Information
+
 This repository accompanies the manuscript:
 
 **“Subminute diagnostics reveal hidden heterogeneity of deep ageing patterns beyond capacity for second-life lithium-ion batteries”**  
